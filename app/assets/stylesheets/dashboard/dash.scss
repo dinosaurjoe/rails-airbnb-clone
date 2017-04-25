@@ -1,0 +1,32 @@
+.dash {
+  margin: 25px 0;
+}
+.dash-body {
+  padding: 0 12.5px;
+  p {
+    font-size: 14px;
+  }
+}
+.dash-section {
+  border: 1px solid #dce0e0;
+  margin-bottom: 24px;
+}
+.dash-aside {
+  padding: 0 12.5px;
+}
+#notification {
+  padding: 10px 0 10px 25px;
+  font-weight: bold;
+}
+.panel-header {
+  background-color: #edefed;
+  color: #484848;
+  font-size: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dce0e0;
+}
+.panel-body {
+  position: relative;
+  padding: 20px;
+}
