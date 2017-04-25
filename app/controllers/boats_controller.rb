@@ -1,6 +1,7 @@
 class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
+    @owner = @boat.user
   end
 
   def new
