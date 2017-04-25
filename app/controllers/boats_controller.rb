@@ -20,7 +20,7 @@ class BoatsController < ApplicationController
   end
 
   def index
-    @boats_by_city = Boat.find_by city: params[:city], type: params[:type]
+    @boats_by_city = Boat.find_by city: params[:city], category: params[:category]
   end
 
   def edit
@@ -35,6 +35,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:type, :city, :price, :address, :capacity, :name)
+    params.require(:boat).permit(:category, :city, :price, :address, :capacity, :name)
   end
 end
