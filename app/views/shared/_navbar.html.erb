@@ -17,8 +17,8 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <a href="#" class="navbar-wagon-item navbar-wagon-link">Become a Boat</a>
-    <a href="#" class="navbar-wagon-item navbar-wagon-link">Sign Up</a>
-    <a href="#" class="navbar-wagon-item navbar-wagon-link">Log In</a>
+    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Notification link-->
 <!--     <a href="" class="navbar-wagon-item navbar-wagon-link">
