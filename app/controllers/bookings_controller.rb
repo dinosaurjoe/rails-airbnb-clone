@@ -6,10 +6,11 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @check_in = params[:check_in]
-    @check_out = params[:check_out]
-    @user_id = params[:user_id]
-    @boat_id = params[:boat_id]
+    @booking.check_in = params[:check_in]
+    @booking.check_out = params[:check_out]
+    @booking.user = User.find(params[:user_id])
+    @booking.boat = Boat.find(params[:boat_id])
+
   end
 
   def create
