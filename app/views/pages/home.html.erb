@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url('https://unsplash.it/1024/600')">
+  <div class="banner-content">
+    <h1>AHOY CAP'N</h1>
+    <h3>where's the next destination?</h3>
+    <div class="form-inline">
+      <%= simple_form_for(@boat) do |f| %>
+        <%= f.input :city, placeholder: "anywhere" %>
+        <%= f.input :category, priority: [ "Shrimp Boat" ], collection: ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"] %>
+        <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+
+
