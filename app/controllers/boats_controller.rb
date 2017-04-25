@@ -20,7 +20,7 @@ class BoatsController < ApplicationController
   end
 
   def index
-    @boats_by_city = Boat.find(params[:city])
+    @boats_by_city = Boat.find_by city: params[:city], type: params[:type]
   end
 
   def edit
