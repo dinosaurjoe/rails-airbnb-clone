@@ -1,4 +1,5 @@
 class BoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def show
     @boat = Boat.find(params[:id])
     @owner = @boat.user
