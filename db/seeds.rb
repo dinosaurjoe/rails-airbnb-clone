@@ -13,7 +13,9 @@ password = Faker::Internet.password(8)
     password: password,
     password_confirmation: password,
     first_name: Faker::Name.first_name,
-    last_name: Faker::Food.ingredient
+    last_name: Faker::Food.ingredient,
+    bio: Faker::Lorem.paragraph(2),
+    profile_img: "http://placehold.it/220x220"
     )
 end
 
@@ -26,7 +28,8 @@ boat_type = ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "House
     price: (1..20000).to_a.sample.to_i,
     capacity: (1..200).to_a.sample.to_i,
     name: Faker::Name.name,
-    user: User.all.sample
+    user: User.all.sample,
+    photo: "https://unsplash.it/100/100/?random"
     )
 end
 

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3 col-md-4 hide-sm">
-      <%= image_tag ("http://placehold.it/220x220") %>
+      <%= image_tag (@user.profile_img) %>
       <h4><%= @user.full_name %></h4>
 
     </div>
@@ -9,14 +9,14 @@
     <div class="col-lg-9 col-md-8 col-sm-12">
       <div class="user-bio">
         <h2><%= @user.full_name %></h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas iste beatae odit omnis minima sit perferendis nostrum, aspernatur enim laboriosam cum sed, soluta qui quis vero inventore corporis reprehenderit temporibus."</p>
+        <p><%= @user.bio %></p>
       </div>
       <div class="user-listings">
         <h3>My Boats</h3>
       <div class="row">
         <% @user.boats.each do |boat| %>
           <div class="col-lg-3">
-            <%= image_tag ("http://placehold.it/100x100") %>
+            <%= image_tag (boat.photo) %>
             <p><%= boat.name %></p>
             </div>
           <% end %>
