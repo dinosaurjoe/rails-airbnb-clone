@@ -23,7 +23,12 @@
 .navbar-wagon-brand img {
   width: 50px;
 }
-
+// Navbar left section
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
@@ -70,7 +75,7 @@
   flex: 0 1 300px;
   display: flex;
   justify-content: flex-end;
-  padding: 0 10px;
+  padding: 0 20px;
   position: relative;
 }
 .navbar-wagon-search-btn {
@@ -79,7 +84,7 @@
   border: none;
   background: transparent;
   position: absolute;
-  right: 14px;
+  right: 24px;
   top: -2px;
   z-index: 1;
 }
