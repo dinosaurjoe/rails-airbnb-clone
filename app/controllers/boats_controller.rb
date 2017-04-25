@@ -20,14 +20,19 @@ class BoatsController < ApplicationController
   end
 
   def index
-    p boat_params
+    boat_params
     @boats_by_city = Boat.where({ city: boat_params[:city], category: boat_params[:category] })
-    p @boats_by_city
-
+    @boats_by_city
   end
 
   def edit
     @boat = Boat.find(params[:id])
+  end
+
+  def update
+    @boat = Boat.find(params[:id])
+    @boat.update(boat_params)
+    redirect_to @boat
   end
 
   def destroy
