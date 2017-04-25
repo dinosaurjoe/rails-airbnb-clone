@@ -5,7 +5,7 @@
     <div class="form-inline">
       <%= simple_form_for(@boat) do |f| %>
         <%= f.input :city, placeholder: "anywhere" %>
-        <%= f.association :category, :include_blank => false %>
+        <%= f.input :category, priority: [ "Shrimp Boat" ], collection: ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"] %>
         <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
       <% end %>
 
@@ -13,4 +13,5 @@
 
   </div>
 </div>
+
 
