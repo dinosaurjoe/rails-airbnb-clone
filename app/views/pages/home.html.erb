@@ -5,7 +5,7 @@
     <div class="form-inline">
       <%= simple_form_for(@boat) do |f| %>
         <%= f.input :city, placeholder: "anywhere" %>
-        <%= f.input :category, placeholder: "duck boat" %>
+        <%= f.association :category, :include_blank => false %>
         <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
       <% end %>
 
@@ -13,3 +13,4 @@
 
   </div>
 </div>
+
