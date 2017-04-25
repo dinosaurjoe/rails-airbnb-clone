@@ -26,14 +26,17 @@ boat_type = ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "House
     price: (1..20000).to_a.sample.to_i,
     capacity: (1..200).to_a.sample.to_i,
     name: Faker::Name.name,
+    user: User.all.sample
     )
 end
 
 
 20.times do
   Booking.create(
-    check_in: Faker::Date.backward(14),
-    check_out: Faker::Date.forward(23)
+    user: User.all.sample,
+    boat: Boat.all.sample,
+    check_in: Faker::Date.backward(14).to_datetime,
+    check_out: Faker::Date.forward(23).to_datetime
     )
 end
 
