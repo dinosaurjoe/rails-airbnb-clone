@@ -1,2 +1,28 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="container">
+  <h1>Booking Request Details</h1>
+  <div class="boat-info">
+    <h2>Boat:</h2>
+    <%= image_tag ("http://placehold.it/220x220") %>
+    <ul>
+      <li><%= @booking.boat.full_name %></li>
+      <li><%= @booking.boat.capacity %></li>
+      <li><%= @booking.boat.category %></li>
+      <li><%= @booking.boat.city %></li>
+      <li><%= @booking.boat.address %></li>
+    </ul>
+
+  </div>
+  <div class="owner-info">
+    <h2>Host:</h2>
+    <ul>
+      <li><%= @booking.boat.user.full_name %></li>
+      <li><%= @booking.boat.user.bio %></li>
+      <li><%= image_tag ("http://placehold.it/220x220") %></li>
+    </ul>
+  </div>
+  <div class="dates-and-price">
+    <%= render 'form' %>
+    <!-- use js to dynamically calculate price based on chosen dates -->
+    <h3>Price: <%= (@booking.check_out - @booking.check_in * @booking.price) %></h3>
+  </div>
+</div>
