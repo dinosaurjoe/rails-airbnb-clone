@@ -5,7 +5,7 @@
     <div class="form-inline">
       <%= simple_form_for(@boat) do |f| %>
         <%= f.input :city, placeholder: "anywhere" %>
-        <%= f.input :type, placeholder: "duck boat" %>
+        <%= f.input :category, placeholder: "duck boat" %>
         <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
       <% end %>
 
