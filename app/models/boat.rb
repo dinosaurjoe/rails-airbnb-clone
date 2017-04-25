@@ -8,4 +8,5 @@ class Boat < ApplicationRecord
   validates :capacity, presence: true, numericality: { greater_than: 0 }
   validates :name, presence: true
   validates :address, presence: true
+  validates :description, presence: true
 end
