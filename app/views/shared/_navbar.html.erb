@@ -15,11 +15,22 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+    <% if user_signed_in?%>
     <a href="#" class="navbar-wagon-item navbar-wagon-link">Become a Boat</a>
     <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% else %>
+    <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+    <div class="dropdown">
+      <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><<%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Dashboard", dashboard_path %></li>
+        <li><%= link_to "Log Out", destroy_user_session_path %></li>
+      </ul>
+    </div>
 
+    <% end %>
     <!-- Notification link-->
 <!--     <a href="" class="navbar-wagon-item navbar-wagon-link">
       <div class="badge-container">
