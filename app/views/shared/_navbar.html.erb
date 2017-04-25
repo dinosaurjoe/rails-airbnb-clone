@@ -1,36 +1,36 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <img src="images/lewagon.png" />
+  <div class="navbar-left">
+    <a href="/" class="navbar-wagon-brand">
+    <img src="https://cdn2.iconfinder.com/data/icons/large-svg-icons-part-3/512/anchor_gestureworks_basic-512.png" />
   </a>
+  <!-- Search -->
+  <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-anchor" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-
-    <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
-
-    <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
+    <a href="#" class="navbar-wagon-item navbar-wagon-link">Become a Boat</a>
+    <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
+<!--     <a href="" class="navbar-wagon-item navbar-wagon-link">
       <div class="badge-container">
         <i class="fa fa-envelope-o"></i>
         <div class="badge badge-blue">3</div>
       </div>
     </a>
+ -->
 
     <!-- Profile picture and dropdown -->
-    <div class="navbar-wagon-item">
+<!--     <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -40,13 +40,17 @@
         </ul>
       </div>
     </div>
-
+ -->
     <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post stuff</a>
+
+<!--     <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post stuff</a>
+ -->
+
   </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+
+<!--   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -55,5 +59,8 @@
         <li><a href="#">Other one</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
+
+
 </div>
+
