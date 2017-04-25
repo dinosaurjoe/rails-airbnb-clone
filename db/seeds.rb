@@ -29,3 +29,11 @@ boat_type = ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "House
     )
 end
 
+
+20.times do
+  Booking.create(
+    check_in: Faker::Date.backward(14),
+    check_out: Faker::Date.forward(23)
+    )
+end
+
