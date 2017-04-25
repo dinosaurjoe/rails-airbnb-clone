@@ -20,7 +20,10 @@ class BoatsController < ApplicationController
   end
 
   def index
-    @boats_by_city = Boat.find_by city: params[:city], category: params[:category]
+    p boat_params
+    @boats_by_city = Boat.where({ city: boat_params[:city], category: boat_params[:category] })
+    p @boats_by_city
+
   end
 
   def edit
