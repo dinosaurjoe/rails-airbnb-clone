@@ -1,2 +1,53 @@
-<h1>Dashboards#show</h1>
-<p>Find me in app/views/dashboards/show.html.erb</p>
+<!-- USING BOOTSTRAP TABS! NOT LEWAGON TABS! -->
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#dashboard" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
+    <li role="presentation"><a href="#your-listings" aria-controls="profile" role="tab" data-toggle="tab">Your Listings</a></li>
+    <li role="presentation"><a href="#your-boats" aria-controls="messages" role="tab" data-toggle="tab">Your Boats</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="settings" role="tab" data-toggle="tab">Profile</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane active" id="dashboard">
+      <h3><%= @user.full_name %></h3>
+      <p><%= link_to "View Profile", user_path(@user) %></p>
+      <p><%= link_to "Edit Profile", edit_user_path(@user) %></p>
+
+<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="your-listings">
+      My Listings NEED CSS
+
+<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="your-boats">
+      <%= @boats.each do |boat| %>
+      <% end %>
+
+  <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="profile">My beautiful Profile
+
+       <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!
+         -->
+
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
