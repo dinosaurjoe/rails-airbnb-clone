@@ -1,8 +1,8 @@
 <div class="container">
-  <% if @boats_by_city.length == 0 %>
+  <% if @boats.length == 0 %>
     <h2>No Search Results</h2>
   <% else %>
-    <% @boats_by_city.in_groups_of(3, false).each do |group| %>
+    <% @boats.in_groups_of(3, false).each do |group| %>
       <div class="row">
       <% group.each do |boat| %>
         <div class="col-xs-12 col-sm-6 col-md-4">

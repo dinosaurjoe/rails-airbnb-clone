@@ -20,9 +20,7 @@ class BoatsController < ApplicationController
   end
 
   def index
-    boat_params
-    @boats_by_city = Boat.where({ city: boat_params[:city], category: boat_params[:category] })
-    @boats_by_city
+    @boats = Boat.near(boat_params[:address], 20).where({ category: boat_params[:category] })
   end
 
   def edit
