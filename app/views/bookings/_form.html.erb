@@ -1,9 +1,9 @@
-<%= simple_form_for(@booking) do |f| %>
+<%= simple_form_for [@boat, @booking] do |f| %>
   <%= f.label :check_in %>
-  <%= f.text_field :check_in %>
+  <%= f.input :check_in, input_html: { class: "datepicker" }%>
 
   <%= f.label :check_out %>
-  <%= f.text_field :check_out %>
+  <%= f.input :check_out, input_html: { class: "datepicker" }%>
 
   <%= f.button :submit %>
 <% end %>

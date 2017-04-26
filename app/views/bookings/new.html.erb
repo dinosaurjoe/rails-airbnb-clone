@@ -4,7 +4,7 @@
     <h2>Boat:</h2>
     <%= image_tag ("http://placehold.it/220x220") %>
     <ul>
-      <li><%= @booking.boat.full_name %></li>
+      <li><%= @booking.boat.name %></li>
       <li><%= @booking.boat.capacity %></li>
       <li><%= @booking.boat.category %></li>
       <li><%= @booking.boat.city %></li>
@@ -14,15 +14,15 @@
   </div>
   <div class="owner-info">
     <h2>Host:</h2>
+    <%= image_tag ("http://placehold.it/220x220") %>
     <ul>
       <li><%= @booking.boat.user.full_name %></li>
       <li><%= @booking.boat.user.bio %></li>
-      <li><%= image_tag ("http://placehold.it/220x220") %></li>
     </ul>
   </div>
   <div class="dates-and-price">
     <%= render 'form' %>
     <!-- use js to dynamically calculate price based on chosen dates -->
-    <h3>Price: <%= (@booking.check_out - @booking.check_in * @booking.price) %></h3>
+    <h3>Price: <%= (7 * @booking.boat.price) %></h3>
   </div>
 </div>
