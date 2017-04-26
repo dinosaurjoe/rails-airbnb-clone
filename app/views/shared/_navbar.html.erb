@@ -15,6 +15,7 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "Become a Boat", new_boat_path %>
     <% if user_signed_in? %>
       <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
       <div class="dropdown">
@@ -26,7 +27,6 @@
         </ul>
       </div>
     <% else %>
-      <a href="#" class="navbar-wagon-item navbar-wagon-link">Become a Boat</a>
       <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
