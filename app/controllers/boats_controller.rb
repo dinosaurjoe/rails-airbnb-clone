@@ -21,6 +21,12 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.near(boat_params[:address], 20).where({ category: boat_params[:category] })
+
+    @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
+      marker.lat boat.latitude
+      marker.lng boat.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def edit
