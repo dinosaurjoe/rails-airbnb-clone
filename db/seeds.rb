@@ -26,12 +26,13 @@ end
 
 boat_type = ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"]
 city = ["Berlin, Germany", "Denver, Colorado", "San Diego, California", "São Paulo, Brazil"]
-500.times do
+address = ["Spreekanal, 10179 Berlin", "Alexanderplatz, 10178 Berlin", "Kollwitzplatz, Kollwitzstraße 1, 10405 Berlin", "Zionskirchplatz, Zionskirchstraße, 10119 Berlin", ""]
+100.times do
   one_city = city.sample
   Boat.create(
     category: boat_type.sample,
-    city: one_city,
-    address: one_city,
+    city: city[0],
+    address: address.sample,
     price: (1..20000).to_a.sample.to_i,
     capacity: (1..200).to_a.sample.to_i,
     name: Faker::Name.name,
