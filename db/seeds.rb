@@ -26,7 +26,7 @@ end
 
 boat_type = ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"]
 city = ["Berlin, Germany", "Denver, Colorado", "San Diego, California", "São Paulo, Brazil"]
-20.times do
+500.times do
   Boat.create(
     category: boat_type.sample,
     city: city.sample,
