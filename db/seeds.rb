@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Booking.destroy_all
+Boat.destroy_all
+User.destroy_all
+
 password = Faker::Internet.password(8)
 
 20.times do
@@ -20,11 +25,12 @@ password = Faker::Internet.password(8)
 end
 
 boat_type = ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"]
-20.times do
+city = ["Berlin, Germany", "Denver, Colorado", "San Diego, California", "São Paulo, Brazil"]
+500.times do
   Boat.create(
     category: boat_type.sample,
-    city: Faker::Address.city,
-    address: Faker::Address.street_address,
+    city: city.sample,
+    address: city.sample,
     price: (1..20000).to_a.sample.to_i,
     capacity: (1..200).to_a.sample.to_i,
     name: Faker::Name.name,
