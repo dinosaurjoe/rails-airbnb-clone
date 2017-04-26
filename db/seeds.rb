@@ -30,7 +30,7 @@ city = ["Berlin, Germany", "Denver, Colorado", "San Diego, California", "São Pa
   one_city = city.sample
   Boat.create(
     category: boat_type.sample,
-    city: one_city
+    city: one_city,
     address: one_city,
     price: (1..20000).to_a.sample.to_i,
     capacity: (1..200).to_a.sample.to_i,
