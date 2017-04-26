@@ -1,5 +1,6 @@
-.push {
-  margin-left: 100px;
+.responsive {
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 .tab-container {
   background-color: #797979;
@@ -13,4 +14,11 @@
 .nav-tabs a:hover {
   text-decoration: none;
   color: #fff;
+}
+.h3 {
+  font-size: 24px;
+  font-weight: normal;
+}
+.no-marg-bot {
+  margin-bottom: 0;
 }
