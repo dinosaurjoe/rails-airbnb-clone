@@ -2,3 +2,39 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.search-bar {
+  background-color: $platinum;
+  padding: 10px 5px;
+  color: $payne-grey;
+  border-radius: 4px;
+}
+
+.search-bar label {
+  margin: 0 10px 0 20px;
+}
+
+.search-bar .btn {
+  margin: 0 10px;
+  background-color: $sea-serpent;
+  opacity: 1;
+  color: $platinum;
+  border-radius: 4px;
+}
+
+.search-bar .btn:hover {
+  opacity: 0.7;
+}
+
+.search-bar input {
+  background-color: white;
+  opacity: 0.6;
+  color: $payne-grey;
+  border: none;
+}
+
+.form-control {
+background-color: white;
+opacity: 0.6;
+color: $payne-grey;
+border: none;
+}
