@@ -1,4 +1,4 @@
-.dash {
+.space-top {
   margin: 25px 0;
 }
 .dash-body {
@@ -7,8 +7,9 @@
     font-size: 14px;
   }
 }
-.dash-section {
+.panel {
   border: 1px solid #dce0e0;
+  background-color: #fff;
   margin-bottom: 24px;
 }
 .dash-aside {
@@ -29,4 +30,57 @@
 .panel-body {
   position: relative;
   padding: 20px;
+  li {
+    font-size:14px;
+    margin-bottom: 5px;
+  }
+}
+.space {
+  margin-bottom: 24px;
+}
+.space-1 {
+  margin-bottom: 18px;
+  margin-top: 0;
+}
+.panel-image {
+  position: relative;
+}
+.btn.btn-contrast.btn-block {
+  position: absolute;
+  bottom: 0;
+}
+.icon {
+  margin-right: 5px;
+}
+.list-unstyled {
+  list-style: none;
+}
+.btn {
+  background-color: #c4c4c4;
+}
+.btn-contrast:hover, .btn-contrast:focus {
+  border-color: #5a5a5a;
+  background-color: #5a5a5a;
+  color: #fff;
+}
+.btn:hover {
+  text-decoration: none;
+  color: white;
+}
+.btn-addlist {
+  background-color: pink;
+  color: white;
+}
+.btn-addlist:hover {
+  opacity: 0.8;
+}
+.sidenav-list {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+.sidenav-item {
+  text-decoration: none;
+  color: #484848;
+  font-weight: bold;
 }
