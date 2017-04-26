@@ -1,21 +1,24 @@
 // Your footer style
 #footer-black {
-  background-color: #333333;
+  background-color: $payne-grey;
   padding: 30px 0;
+
 }
 #footer-black a {
   font-size: 25px;
   padding: 0 15px;
-  color: white;
-  transition: 1s ease;
+  color: $platinum;
+  transition: 0.5s ease;
 }
 #footer-black ul {
   margin-bottom: 0;
 }
 #footer-black p {
   margin-top: 10;
-  color: white;
+  color: $platinum;
+  font-size: 14px;
+  margin-right: 30px;
 }
 #footer-black a:hover {
-  color: #CC7578;
+  opacity: 0.8;
 }
