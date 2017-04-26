@@ -11,7 +11,7 @@
       <% group.each do |boat| %>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
           <%= link_to boat_path(boat) do %>
-          <% if !boat.photo %>
+          <% if boat.photo %>
           <% image_path = cl_image_path boat.photo %>
           <% else %>
           <% image_path = image_path "sailboat" %>
