@@ -1,0 +1,40 @@
+.boat-container {
+  padding: 30px 0;
+}
+
+.boat-container h2 {
+  margin-top: 0px;
+}
+
+.boat-table {
+  background-color: $platinum;
+  color: $payne-grey;
+  padding: 20px;
+  line-height: 35px;
+}
+
+.boat-header {
+  background-color: $sea-serpent;
+  color: white;
+}
+
+.btn-book {
+  background-color: $sunset-orange;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.test-table {
+  background-color: $platinum;
+  width: 300px;
+  height: 230px;
+  line-height: 40px;
+}
+
+
+.test-table tr {
+  height: 10px;
+}

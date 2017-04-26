@@ -1,40 +1,51 @@
-
-<% image_path = @boat.photo %>
-<div class="boat-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= image_path %>);">
-  <div class="banner-content">
-    <h3><%= @boat.name %></h3>
-    <p><%= @boat.city %></p>
+<div class="boat-container">
+  <% image_path = @boat.photo %>
+  <div class="boat-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= image_path %>);">
+    <div class="banner-content">
+      <h3><%= @boat.name %></h3>
+      <p><%= @boat.city %></p>
+    </div>
   </div>
-</div>
 
 
-<div class="container">
-  <h2><%= @boat.name %></h2>
-  <ul>
-    <li><%= @boat.city %></li>
-    <li><%= @boat.category %></li>
-  </ul>
-  <p><%= @boat.description %></p>
+  <div class="container boat-container">
 
-  <table>
-    <thead>
-      <td><%= @boat.price %></td>
-    </thead>
-    <tbody>
-      <tr>
-        <td>"start date"</td>
-      </tr>
-      <tr>
-        <td>"end date"</td>
-      </tr>
-      <tr>
-        <td>"TOTAL PRICE"</td>
-      </tr>
-      <tr>
-        <td><%= link_to 'book now', new_booking_path, class: 'btn' %></td>
-      </tr>
-    </tbody>
-  </table>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+      <h2><%= @boat.name %></h2>
+      <ul class="list-inline">
+        <li><%= @boat.city %></li>
+        <li><%= @boat.category %></li>
+      </ul>
+        <p><%= @boat.description %></p>
+      </div>
+
+      <div class="col-sm-12 col-md-3 col-md-offset-1">
+        <table class="text-center test-table">
+          <thead class="boat-header">
+          <tr>
+            <td>Price per day: <%= @boat.price %></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>check in</strong> 12/05/17</td>
+            </tr>
+            <tr>
+              <td><strong>check out</strong> 20/05/17</td>
+            </tr>
+            <tr>
+              <td><strong>TOTAL</strong> $<%= @boat.price * 8 %></td>
+            </tr>
+            <tr>
+              <td><%= link_to 'book now', new_booking_path, class: 'btn btn-book' %></td>
+            </tr>
+          </tbody>
+
+        </table>
+    </div>
+  </div>
 
 
 </div>
