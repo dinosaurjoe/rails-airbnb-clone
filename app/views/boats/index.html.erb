@@ -12,11 +12,11 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
           <%= link_to boat_path(boat) do %>
           <% if boat.photo %>
-          <% image_path = cl_image_path boat.photo %>
+          <%= cl_image_tag boat.photo %>
           <% else %>
-          <% image_path = image_path "sailboat" %>
+          <%= image_tag "sailboat.jpg" %>
           <% end %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path %>');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path('sailboat.jpg') %>');">
             <h1><%= boat.name %></h1>
             <p><%= boat.category %></p>
             <p><%= boat.capacity %></p>
