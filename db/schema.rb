@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20170426091115) do
     t.integer  "price"
     t.integer  "capacity"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "photo"
     t.string   "category"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "description"
     t.index ["user_id"], name: "index_boats_on_user_id", using: :btree
   end
 

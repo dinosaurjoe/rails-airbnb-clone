@@ -35,7 +35,8 @@ city = ["Berlin, Germany", "Denver, Colorado", "San Diego, California", "São Pa
     capacity: (1..200).to_a.sample.to_i,
     name: Faker::Name.name,
     user: User.all.sample,
-    photo: "https://unsplash.it/100/100/?random"
+    photo: "https://unsplash.it/100/100/?random",
+    description: Faker::Lorem.paragraph(2)
     )
 end
 
