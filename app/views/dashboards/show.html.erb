@@ -2,12 +2,14 @@
 <div>
   <div class="tab-container">
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs push" role="tablist">
-      <li role="presentation" class="active"><a href="#dashboard" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
-      <li role="presentation"><a href="#your-listings" aria-controls="profile" role="tab" data-toggle="tab">Your Listings</a></li>
-      <li role="presentation"><a href="#your-boats" aria-controls="messages" role="tab" data-toggle="tab">Your Boats</a></li>
-      <li role="presentation"><a href="#profile" aria-controls="settings" role="tab" data-toggle="tab">Profile</a></li>
-    </ul>
+    <div class="responsive">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#dashboard" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
+        <li role="presentation"><a href="#your-listings" aria-controls="profile" role="tab" data-toggle="tab">Your Listings</a></li>
+        <li role="presentation"><a href="#your-boats" aria-controls="messages" role="tab" data-toggle="tab">Your Boats</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="settings" role="tab" data-toggle="tab">Profile</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- Tab panes -->
@@ -15,19 +17,29 @@
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
     <div role="tabpanel" class="tab-pane active" id="dashboard">
-      <div class="dash">
+      <div class="space-top">
         <div class="container">
           <div class="row">
             <div class="dash-body col-md-3">
-              <div class="dash-section text-center">
-                <!-- ADD PICTURE HERE -->
-                <%= image_tag ("http://placehold.it/220x220") %>
-                <!-- ADD PICTURE HERE -->
-                <h3><%= @user.full_name %></h3>
-                <p><%= link_to "View Profile", user_path(@user) %></p>
-                <p><%= link_to "Edit Profile", edit_user_path(@user) %></p>
+              <div class="panel">
+                <div class="panel-image profile-photo">
+                  <!-- ADD PICTURE HERE -->
+                  <%= image_tag ("http://placehold.it/220x220") %>
+                  <!-- ADD PICTURE HERE -->
+                  <div class="upload-profile-pic btn btn-contrast btn-block text-wrap">
+                    <!-- ADD PHOTO HERE! link to shit -->
+                    <i class="fa fa-camera icon" aria-hidden="true"></i>Add a Photo
+                  </div>
+                </div>
+                <div class="panel-body">
+                  <h2 class="text-center"><%= @user.full_name %></h2>
+                  <ul class="list-unstyled text-center">
+                    <li><%= link_to "View Profile", user_path(@user) %></li>
+                    <li><%= link_to "Edit Profile", edit_user_path(@user) %></li>
+                  </ul>
+                </div>
               </div>
-              <div class="dash-section text-center">
+              <div class="panel text-center">
                 <div class="panel-header">Verified Information</div>
                 <div class="panel-body">
                   <ul class="list-unstyled">
@@ -38,7 +50,7 @@
             </div>
 
             <div class="dash-aside col-md-9">
-              <div class="dash-section">
+              <div class="panel">
                 <div class="panel-header" id="notification">
                   Notification
                 </div>
@@ -46,7 +58,7 @@
                   <p>Maybe can be a list of notifications</p>
                 </div>
               </div>
-              <div class="dash-section">
+              <div class="panel">
                 <div class="panel-header" id="notification">
                   Messages
                 </div>
@@ -60,30 +72,72 @@
       </div>
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="your-listings">
-      My Listings NEED CSS
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
+    <div role="tabpanel" class="tab-pane" id="your-listings">
+      <div class="space-top">
+        <div class="container">
+          <div class="row">
+            <div class="dash-body col-md-3">
+              <ul class="sidenav-list">
+                <li><%= link_to "Your Listings", user_path(@user), class: "sidenav-item" %></li>
+                <div class="space-top">
+                  <%= link_to "Add New Listing", user_path(@user), class: "btn btn-addlist" %>
+                </div>
+              </ul>
 
+            </div>
+
+            <div class="dash-aside col-md-9">
+              <div class="space-1 h3">
+                Should only appear if i have no listings. CHANGE THE PATHS, CAUSE AL THE PATHS LEAD TO ROME
+              </div>
+              <div class="space-top">
+                  <%= link_to "Add New Listing", user_path(@user), class: "btn btn-addlist" %>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
 
+<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
     <div role="tabpanel" class="tab-pane" id="your-boats">
-      <%= @boats.each do |boat| %>
-      <% end %>
-
-  <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12"><h2>Your Trips</h2></div>
+          <%= @boats.each do |boat| %>
+          <div class="dash-body col-md-4">
+            <div class="panel">
+              <div class="panel-image"><%= image_tag ("http://placehold.it/220x220") %></div>
+              <div class="avatar-bordered"><%= image_tag ("https://cms-assets.tutsplus.com/uploads/users/107/posts/25507/image/38-flat-professions-avatars-icons.jpg") %></div>
+              <div class="panel-body">
+                <h2 class="text-center"><%= boat.city %></h2>
+                <div>
+                  <p>Date</p>
+                  <p>Description?</p>
+                </div>
+                <div class="review"><%= link_to "View Receipt", boat_path(@user) %></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
 
-    <div role="tabpanel" class="tab-pane" id="profile">My beautiful Profile
 
-       <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!
-         -->
-
+<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>My beautiful Profile</h1>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
 
 
 
