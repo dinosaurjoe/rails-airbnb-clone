@@ -6,19 +6,24 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @booking.check_in = params[:check_in]
-    @booking.check_out = params[:check_out]
-    @booking.user = User.find(params[:user_id])
-    @booking.boat = Boat.find(params[:boat_id])
+    @boat = Boat.find(params[:boat_id])
+    # @booking.check_in = params[:check_in]
+    # @booking.check_out = params[:check_out]
+    @booking.user = current_user
+    @booking.boat = @boat
 
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @boat = Boat.find(params[:boat_id])
+    @booking.user = current_user
+    @booking.boat = @boat
+    p @booking
     if @booking.save
-      redirect_to new_boat_path
+      redirect_to dashboard_path
     else
-      render 'new'
+      redirect_to new_boat_booking_path
     end
   end
 
