@@ -4,7 +4,7 @@
     <h3>where's the next destination?</h3>
     <div class="form-inline">
       <%= simple_form_for @boat, url: boats_path, method: :get do |f| %>
-        <%= f.input :address, placeholder: "Berlin, Colorado" %>
+        <%= f.input :address %>
         <%= f.input :category, priority: [ "Shrimp Boat" ], collection: ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"] %>
         <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
       <% end %>
@@ -13,5 +13,6 @@
 
   </div>
 </div>
+
 
 
