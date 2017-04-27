@@ -1,33 +1,38 @@
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 200px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   background-size: cover !important;
   color: white;
   position: relative;
+  border-radius: 4px;
+  padding-left: 0;
 }
-.card-user {
+
+.card-boat-name {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  left: 15px;
+  bottom: 15px;
+  font-size: 26px
+
+
 }
-.card-category {
+.card-boat-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  right: 15px;
   font-size: 10px;
   text-transform: uppercase;
+  background-color: rgba(89,195,195,0.5);
+  padding: 4px 6px;
 }
-.card-description {
+.card-boat-price {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  right: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
 }
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 13px;
-  }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -44,4 +49,15 @@
 .card h1 {
  font-family: $base-font;
  font-weight: heavy;
+ margin-bottom: 0;
+}
+
+
+.boat-card {
+  padding-left: 0;
+  margin-right: 5px;
+}
+
+.boat-card:hover {
+  opacity: 0.8;
 }
