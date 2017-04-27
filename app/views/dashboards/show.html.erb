@@ -114,7 +114,7 @@
                       <h3 id="title" class="marg-bot-5"><%= boat.name %> - <%= boat.city %></h3>
                       <hr id="line-more-top">
                       <p><%= boat.category %> - Capacity: <%= boat.capacity %> - Price: <%= boat.price %>€</p>
-                      <p style="opacity: 0.7"><%= boat.description %></p>
+                      <p style="opacity: 0.7"><%= cutoff_text(boat.description) %></p>
                     </div>
                   </div>
                   <div class="col-md-2 text-center">
@@ -150,7 +150,7 @@
                 <h2 id="title"><%= booking.boat.city %></h2>
                 <div>
                   <p><%= booking.check_in %> - <%= booking.check_out %></p>
-                  <p style="opacity: 0.7"><%= booking.boat.description %></p>
+                  <p style="opacity: 0.7"><%= cutoff_text(booking.boat.description) %></p>
                 </div>
                 <hr size="10">
                 <div class="review"><%= link_to "View Receipt", boat_path(booking.boat_id) %></div>
