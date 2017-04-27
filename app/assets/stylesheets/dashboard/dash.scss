@@ -28,7 +28,7 @@
   border-bottom: 1px solid #dce0e0;
 }
 .panel-body {
-  position: relative;
+  // position: relative;
   padding: 20px;
   li {
     font-size:14px;
@@ -83,4 +83,7 @@
   text-decoration: none;
   color: #484848;
   font-weight: bold;
+}
+.pos-abs {
+  position: absolute;
 }

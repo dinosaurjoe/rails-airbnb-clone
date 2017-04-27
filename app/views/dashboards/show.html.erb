@@ -24,11 +24,18 @@
               <div class="panel">
                 <div class="panel-image profile-photo">
                   <!-- ADD PICTURE HERE -->
-                  <%= image_tag ("http://placehold.it/220x220") %>
+                  <%= cl_image_tag @user.profile_img, height: 300, width: 400, crop: :fill %>
                   <!-- ADD PICTURE HERE -->
                   <div class="upload-profile-pic btn btn-contrast btn-block text-wrap">
+                    <%= simple_form_for(@user) do |f| %>
+                      <%= f.input :profile_img %>
+                      <%= f.input :profile_img_cache, as: :hidden %>
+                      <%= f.submit %>
+                    <% end %>
                     <!-- ADD PHOTO HERE! link to shit -->
-                    <i class="fa fa-camera icon" aria-hidden="true"></i>Add a Photo
+                    <i class="fa fa-camera icon" aria-hidden="true"></i>
+
+                    Add a Photo
                   </div>
                 </div>
                 <div class="panel-body">
@@ -106,12 +113,15 @@
     <div role="tabpanel" class="tab-pane" id="your-boats">
       <div class="container">
         <div class="row">
-          <div class="col-md-12"><h2>Your Trips</h2></div>
-          <%= @boats.each do |boat| %>
+          <div class="col-md-12 space"><h2>Your Boats</h2></div>
+          <% @boats.each do |boat| %>
           <div class="dash-body col-md-4">
             <div class="panel">
-              <div class="panel-image"><%= image_tag ("http://placehold.it/220x220") %></div>
-              <div class="avatar-bordered"><%= image_tag ("https://cms-assets.tutsplus.com/uploads/users/107/posts/25507/image/38-flat-professions-avatars-icons.jpg") %></div>
+              <div class="panel-image boat-background" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
+                <div class="text-center pos-abs avatar-position"><%= image_tag ("https://cms-assets.tutsplus.com/uploads/users/107/posts/25507/image/38-flat-professions-avatars-icons.jpg"), class: "avatar-large-bordered" %>
+                </div>
+              </div>
+
               <div class="panel-body">
                 <h2 class="text-center"><%= boat.city %></h2>
                 <div>
