@@ -5,9 +5,10 @@
     <div class="responsive">
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#dashboard" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
-        <li role="presentation"><a href="#your-listings" aria-controls="profile" role="tab" data-toggle="tab">Your Listings</a></li>
-        <li role="presentation"><a href="#your-boats" aria-controls="messages" role="tab" data-toggle="tab">Your Boats</a></li>
+        <li role="presentation"><a href="#my-listings" aria-controls="profile" role="tab" data-toggle="tab">My Boats</a></li>
+        <li role="presentation"><a href="#my-voyages" aria-controls="messages" role="tab" data-toggle="tab">My Voyages</a></li>
         <li role="presentation"><a href="#profile" aria-controls="settings" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#requests" aria-controls="settings" role="tab" data-toggle="tab">Requests</a></li>
       </ul>
     </div>
   </div>
@@ -24,11 +25,18 @@
               <div class="panel">
                 <div class="panel-image profile-photo">
                   <!-- ADD PICTURE HERE -->
-                  <%= image_tag ("http://placehold.it/220x220") %>
+                  <%= cl_image_tag @user.profile_img, height: 300, width: 400, crop: :fill %>
                   <!-- ADD PICTURE HERE -->
                   <div class="upload-profile-pic btn btn-contrast btn-block text-wrap">
+                    <%= simple_form_for(@user) do |f| %>
+                      <%= f.input :profile_img %>
+                      <%= f.input :profile_img_cache, as: :hidden %>
+                      <%= f.submit %>
+                    <% end %>
                     <!-- ADD PHOTO HERE! link to shit -->
-                    <i class="fa fa-camera icon" aria-hidden="true"></i>Add a Photo
+                    <i class="fa fa-camera icon" aria-hidden="true"></i>
+
+                    Add a Photo
                   </div>
                 </div>
                 <div class="panel-body">
@@ -74,27 +82,50 @@
 
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane" id="your-listings">
+    <div role="tabpanel" class="tab-pane" id="my-listings">
       <div class="space-top">
         <div class="container">
           <div class="row">
-            <div class="dash-body col-md-3">
+            <div class="dash-body col-md-2">
               <ul class="sidenav-list">
                 <li><%= link_to "Your Listings", user_path(@user), class: "sidenav-item" %></li>
+                <h2>Your Listings</h2>
                 <div class="space-top">
-                  <%= link_to "Add New Listing", user_path(@user), class: "btn btn-addlist" %>
+                  <%= link_to "Add New Listing", new_boat_path(@user), class: "btn btn-addlist" %>
                 </div>
               </ul>
-
             </div>
+            <div class="dash-aside col-md-10">
 
-            <div class="dash-aside col-md-9">
+              <% if !@user.boats %>
               <div class="space-1 h3">
-                Should only appear if i have no listings. CHANGE THE PATHS, CAUSE AL THE PATHS LEAD TO ROME
+                Ah, it seems you have no Boats listed yet.GET BACK HERE AND ADD A BOAT YOU SCRUB!
               </div>
-              <div class="space-top">
-                  <%= link_to "Add New Listing", user_path(@user), class: "btn btn-addlist" %>
+              <% end %>
+
+                <% @boats.each do |boat| %>
+                <div class="row panel">
+                  <div class="col-md-3 pad-25-right">
+                    <div class="panel-image boat-background middle" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
+                    </div>
+                  </div>
+                  <div class="col-md-7 pad-12">
+                    <div>
+                      <h3 id="title" class="marg-bot-5"><%= boat.name %> - <%= boat.city %></h3>
+                      <hr id="line-more-top">
+                      <p><%= boat.category %> - Capacity: <%= boat.capacity %> - Price: <%= boat.price %>€</p>
+                      <p style="opacity: 0.7"><%= boat.description %></p>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <div class="pad-top-6"><%= link_to "Show", boat_path(@user), class: "btn btn-listing" %></div>
+                    <div class="pad-top-6"><%= link_to "Edit", edit_boat_path(@user), class: "btn btn-listing" %></div>
+                  </div>
                 </div>
+                <% end %>
+              <div class="space-top">
+                <%= link_to "Add New Listing", new_boat_path(@user), class: "btn btn-addlist" %>
+              </div>
             </div>
 
           </div>
@@ -103,22 +134,26 @@
     </div>
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane" id="your-boats">
+    <div role="tabpanel" class="tab-pane" id="my-voyages">
       <div class="container">
         <div class="row">
-          <div class="col-md-12"><h2>Your Trips</h2></div>
-          <%= @boats.each do |boat| %>
+          <div class="col-md-12 space"><h2>Your Voyages</h2></div>
+          <% @bookings.each do |booking| %>
           <div class="dash-body col-md-4">
             <div class="panel">
-              <div class="panel-image"><%= image_tag ("http://placehold.it/220x220") %></div>
-              <div class="avatar-bordered"><%= image_tag ("https://cms-assets.tutsplus.com/uploads/users/107/posts/25507/image/38-flat-professions-avatars-icons.jpg") %></div>
-              <div class="panel-body">
-                <h2 class="text-center"><%= boat.city %></h2>
-                <div>
-                  <p>Date</p>
-                  <p>Description?</p>
+              <div class="panel-image boat-background big" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
+                <div class="text-center pos-abs avatar-position"><%= image_tag ("https://cms-assets.tutsplus.com/uploads/users/107/posts/25507/image/38-flat-professions-avatars-icons.jpg"), class: "avatar-large-bordered" %>
                 </div>
-                <div class="review"><%= link_to "View Receipt", boat_path(@user) %></div>
+              </div>
+
+              <div class="panel-body text-center">
+                <h2 id="title"><%= booking.boat.city %></h2>
+                <div>
+                  <p><%= booking.check_in %> - <%= booking.check_out %></p>
+                  <p style="opacity: 0.7"><%= booking.boat.description %></p>
+                </div>
+                <hr size="10">
+                <div class="review"><%= link_to "View Receipt", boat_path(booking.boat_id) %></div>
               </div>
             </div>
           </div>
@@ -139,6 +174,16 @@
       </div>
     </div>
 
+<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
+    <div role="tabpanel" class="tab-pane" id="requests">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Work on this Alex</h1>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   </div>
