@@ -14,6 +14,8 @@
 .navbar-wagon a {
   text-decoration: none;
   color: $payne-grey;
+  padding-right: 15px;
+
 }
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
@@ -39,6 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 /* Navbar item */
