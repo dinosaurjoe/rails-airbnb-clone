@@ -1,7 +1,16 @@
-// Your footer style
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 #footer-black {
   background-color: $payne-grey;
   padding: 30px 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow:hidden;
 
 }
 #footer-black a {
@@ -22,3 +31,4 @@
 #footer-black a:hover {
   opacity: 0.8;
 }
+
