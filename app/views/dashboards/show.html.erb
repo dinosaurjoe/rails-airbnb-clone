@@ -95,20 +95,28 @@
               </ul>
             </div>
             <div class="dash-aside col-md-10">
+
               <div class="space-1 h3">
                 Should only appear if i have no listings. CHANGE THE PATHS, CAUSE AL THE PATHS LEAD TO ROME
               </div>
-              <% @boats.each do |boat| %>
-                <div>
-                  <div class="panel-image boat-background" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
+
+                <div class="row">
+                <% @boats.each do |boat| %>
+                  <div class="col-md-3 pad-12">
+                    <div class="panel-image boat-background middle" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
+                    </div>
                   </div>
-                  <div>
-                    <h3><%= boat.name %></h3>
-                    <hr>
-                    <p><%= boat.description %></p>
+                  <div class="col-md-9 pad-12">
+                    <div>
+                      <h3 id="title"><%= boat.name %> - <%= boat.city %></h3>
+                      <hr id="line-more-top">
+                      <p><%= boat.category %> - Capacity: <%= boat.capacity %> - Price: <%= boat.price %></p>
+                      <p style="opacity: 0.7"><%= boat.description %></p>
+                    </div>
                   </div>
+                <% end %>
                 </div>
-              <% end %>
+
               <div class="space-top">
                   <%= link_to "Add New Listing", user_path(@user), class: "btn btn-addlist" %>
                 </div>
@@ -127,16 +135,16 @@
           <% @bookings.each do |booking| %>
           <div class="dash-body col-md-4">
             <div class="panel">
-              <div class="panel-image boat-background" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
+              <div class="panel-image boat-background big" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
                 <div class="text-center pos-abs avatar-position"><%= image_tag ("https://cms-assets.tutsplus.com/uploads/users/107/posts/25507/image/38-flat-professions-avatars-icons.jpg"), class: "avatar-large-bordered" %>
                 </div>
               </div>
 
               <div class="panel-body text-center">
-                <h2 id="boat-title"><%= booking.boat.city %></h2>
+                <h2 id="title"><%= booking.boat.city %></h2>
                 <div>
                   <p><%= booking.check_in %> - <%= booking.check_out %></p>
-                  <p><%= booking.boat.description %></p>
+                  <p style="opacity: 0.7"><%= booking.boat.description %></p>
                 </div>
                 <hr size="10">
                 <div class="review"><%= link_to "View Receipt", boat_path(booking.boat_id) %></div>
