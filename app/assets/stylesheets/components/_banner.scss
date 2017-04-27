@@ -14,7 +14,6 @@
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   font-family: $header-font;
-  margin-bottom: 10px;
 }
 .banner p {
   font-size: 20px;
@@ -27,14 +26,16 @@
 .banner h3 {
   font-family: $base-font;
   font-weight: lighter;
-  letter-spacing: 2px;
-  margin-top: 5px;
+  letter-spacing: 4px;
+  font-style: 26px;
+  margin-top: 10px;
 }
 
 .banner-content {
-  margin-top: 55px;
+  margin-top: 65px;
 }
 
 .search-bar {
   margin-top: 250px;
+
 }
