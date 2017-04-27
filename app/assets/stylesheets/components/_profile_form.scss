@@ -1,4 +1,4 @@
-.boat-form h2 {
+.profile-form h2 {
   font-family: $base-font;
   color: white;
   font-size:28px;
@@ -8,7 +8,7 @@
 
 }
 
-.boat-form {
+.profile-form {
   background-color: $platinum;
   border-radius: 4px;
   padding: 0 15px 10px 15px;
@@ -19,7 +19,7 @@
 
 }
 
-.boat-form-header {
+.profile-form-header {
   background-color: $sea-serpent;
   margin: none;
   height: 50px;
@@ -30,13 +30,13 @@
 
 }
 
-.boat-form input {
+.profile-form input {
   letter-spacing: 0.5px
 
 }
 
 
-.boat-form input {
+.profile-form input {
   border: none;
   padding: 3px 3px 3px 15px;
   color: $payne-grey;
@@ -46,22 +46,22 @@
 
 
 
-.boat-form .btn {
-  margin: 0 10px;
+.profile-form .btn {
+  margin: 0 15px;
   background-color: $sea-serpent;
   opacity: 1;
   color: white;
   border-radius: 4px;
   padding: 6px 15px;
   position: absolute;
-  bottom: 15px;
+  bottom: 23px;
   right: 15px;
 }
 
-.boat-form .btn:hover {
+.profile-form .btn:hover {
   opacity: 0.7;
 }
 
-.boat-category {
+.profile-category {
   width: 390px;
 }
