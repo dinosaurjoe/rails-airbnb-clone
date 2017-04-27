@@ -11,6 +11,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.photo = "http://res.cloudinary.com/dpx3mlueo/image/upload/v1493307810/ri9dgybvbejrwdxyqwwu.jpg"  if boat_params[:photo].nil?
     @boat.user = current_user
     if @boat.save
       redirect_to dashboard_path

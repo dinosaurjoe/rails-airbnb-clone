@@ -2,8 +2,9 @@
   <% if @boats.length == 0 %>
     <h2>No Search Results</h2>
   <% else %>
+  <div class="search-content">
     <div class="fixed-map">
-    <%= render 'map' %>
+      <%= render 'map' %>
     </div>
     <div class="cards">
     <% @boats.in_groups_of(2, false).each do |group| %>
@@ -29,6 +30,6 @@
       <% end %>
     <% end %>
     </div>
-
+  </div>
 </div>
-<br>
+

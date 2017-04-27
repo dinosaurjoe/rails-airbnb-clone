@@ -1,0 +1,44 @@
+hr {
+    border: none;
+    height: 1px;
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+    opacity: 0.4;
+}
+.pad-12 {
+  padding: 0 12.5px;
+}
+.pad-25-right {
+  padding: 0 25px 0 0;
+}
+.big {
+  height: 220px;
+}
+.middle {
+  height: 150px;
+}
+#title {
+  margin-top: 10px;
+}
+.no-marg-bot {
+  margin-bottom: 0;
+}
+.marg-bot-5 {
+  margin-bottom: 5px;
+}
+.no-pad-left {
+  padding-left: 0;
+}
+.pad-right-5 {
+  padding-right: 5px;
+}
+.space-top {
+  margin: 25px 0;
+}
+.space {
+  margin-bottom: 24px;
+}
+.space-1 {
+  margin-bottom: 18px;
+  margin-top: 0;
+}

@@ -1,0 +1,67 @@
+.profile-form h2 {
+  font-family: $base-font;
+  color: white;
+  font-size:28px;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 10px;
+
+}
+
+.profile-form {
+  background-color: $platinum;
+  border-radius: 4px;
+  padding: 0 15px 10px 15px;
+  margin: 20px 0;
+  font-weight: lighter;
+  border: none;
+  position: relative;
+
+}
+
+.profile-form-header {
+  background-color: $sea-serpent;
+  margin: none;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+}
+
+.profile-form input {
+  letter-spacing: 0.5px
+
+}
+
+
+.profile-form input {
+  border: none;
+  padding: 3px 3px 3px 15px;
+  color: $payne-grey;
+  margin: 15px 5px;
+  border-radius: 4px;
+}
+
+
+
+.profile-form .btn {
+  margin: 0 15px;
+  background-color: $sea-serpent;
+  opacity: 1;
+  color: white;
+  border-radius: 4px;
+  padding: 6px 15px;
+  position: absolute;
+  bottom: 23px;
+  right: 15px;
+}
+
+.profile-form .btn:hover {
+  opacity: 0.7;
+}
+
+.profile-category {
+  width: 390px;
+}
