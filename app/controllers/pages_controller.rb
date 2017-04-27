@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @boat = Boat.new
+    @booking = Booking.new
   end
 end
