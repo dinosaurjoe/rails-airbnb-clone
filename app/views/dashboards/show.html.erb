@@ -85,20 +85,30 @@
       <div class="space-top">
         <div class="container">
           <div class="row">
-            <div class="dash-body col-md-3">
+            <div class="dash-body col-md-2">
               <ul class="sidenav-list">
                 <li><%= link_to "Your Listings", user_path(@user), class: "sidenav-item" %></li>
+                <h2>Your Listings</h2>
                 <div class="space-top">
                   <%= link_to "Add New Listing", user_path(@user), class: "btn btn-addlist" %>
                 </div>
               </ul>
-
             </div>
-
-            <div class="dash-aside col-md-9">
+            <div class="dash-aside col-md-10">
               <div class="space-1 h3">
                 Should only appear if i have no listings. CHANGE THE PATHS, CAUSE AL THE PATHS LEAD TO ROME
               </div>
+              <% @boats.each do |boat| %>
+                <div>
+                  <div class="panel-image boat-background" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
+                  </div>
+                  <div>
+                    <h3><%= boat.name %></h3>
+                    <hr>
+                    <p><%= boat.description %></p>
+                  </div>
+                </div>
+              <% end %>
               <div class="space-top">
                   <%= link_to "Add New Listing", user_path(@user), class: "btn btn-addlist" %>
                 </div>
