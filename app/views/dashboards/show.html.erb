@@ -5,8 +5,8 @@
     <div class="responsive">
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#dashboard" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
-        <li role="presentation"><a href="#your-listings" aria-controls="profile" role="tab" data-toggle="tab">Your Listings</a></li>
-        <li role="presentation"><a href="#your-boats" aria-controls="messages" role="tab" data-toggle="tab">Your Boats</a></li>
+        <li role="presentation"><a href="#my-listings" aria-controls="profile" role="tab" data-toggle="tab">My Listings</a></li>
+        <li role="presentation"><a href="#my-voyages" aria-controls="messages" role="tab" data-toggle="tab">My Voyages</a></li>
         <li role="presentation"><a href="#profile" aria-controls="settings" role="tab" data-toggle="tab">Profile</a></li>
       </ul>
     </div>
@@ -81,7 +81,7 @@
 
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane" id="your-listings">
+    <div role="tabpanel" class="tab-pane" id="my-listings">
       <div class="space-top">
         <div class="container">
           <div class="row">
@@ -110,11 +110,11 @@
     </div>
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
-    <div role="tabpanel" class="tab-pane" id="your-boats">
+    <div role="tabpanel" class="tab-pane" id="my-voyages">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 space"><h2>Your Boats</h2></div>
-          <% @boats.each do |boat| %>
+          <div class="col-md-12 space"><h2>Your Voyages</h2></div>
+          <% @bookings.each do |booking| %>
           <div class="dash-body col-md-4">
             <div class="panel">
               <div class="panel-image boat-background" style= "background-image: linear-gradient(-225deg, rgba(0,78,55,0.3) 0%, rgba(0,36,61,0.3) 50%), url('<%= image_path('bananaboat') %>')">
@@ -122,11 +122,11 @@
                 </div>
               </div>
 
-              <div class="panel-body">
-                <h2 class="text-center"><%= boat.city %></h2>
+              <div class="panel-body text-center">
+                <h2 id="boat-title"><%= booking.boat.city %></h2>
                 <div>
-                  <p>Date</p>
-                  <p>Description?</p>
+                  <p><%= booking.check_in %> - <%= booking.check_out %></p>
+                  <p><%= booking.boat.description %></p>
                 </div>
                 <div class="review"><%= link_to "View Receipt", boat_path(@user) %></div>
               </div>
