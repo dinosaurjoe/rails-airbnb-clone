@@ -1,0 +1,45 @@
+.booking-main-row {
+  background-color: $platinum;
+  border-radius: 20px;
+}
+
+.booking-container {
+  hr {border-width: 3px;}
+  h2, h3 {font-family: $base-font;}
+  padding: 10px;
+  h1 {}
+}
+
+.boat-info, .owner-info {
+  .boat-description {}
+}
+
+.boat-description, .owner-description {
+  li {
+    list-style-type: none;
+
+  }
+}
+
+.btn-book {
+  background-color: $sunset-orange;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.boat-image img, .owner-image img {
+  border-radius: 50%;
+}
+.row.is-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+// .row.is-flex > [class*='col-'] {
+//     display: flex;
+//     flex-direction: column;
+// }
+
