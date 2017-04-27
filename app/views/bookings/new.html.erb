@@ -3,20 +3,20 @@
     <div class="booking-main-row col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
       <div class="booking-header">
         <h1 class="text-center">Create Booking Request</h1>
-        <hr>
+
       </div>
 
 
 
       <div class="boat-info">
-        <h2>The Boat:</h2>
+        <h2 id="boat-header">The Boat:</h2>
         <div class="row is-flex">
           <div class="boat-image text-center col-xs-12 col-md-6 col-lg-6">
             <%= cl_image_tag @booking.boat.photo %>
           </div>
 
           <div class="boat-description col-xs-12 col-md-6 col-lg-6">
-            <h2><%= @booking.boat.name %></h2>
+            <h3><%= @booking.boat.name %></h3>
             <ul class="list-inline">
               <li><%= @booking.boat.city %></li>
               <li><%= @booking.boat.category %></li>
@@ -26,23 +26,19 @@
         </div>
       </div>
 
-      <hr>
-
       <div class="owner-info">
-        <h2>Your Host:</h2>
+        <h2 id="host-header">Your Host:</h2>
         <div class="row is-flex">
           <div class="owner-image text-center col-xs-12 col-md-6 col-lg-6">
             <%= cl_image_tag @booking.user.profile_img %>
           </div>
 
           <div class="owner-description col-xs-12 col-md-6 col-lg-6">
-            <h2><%= @booking.boat.user.full_name %></h2>
+            <h3><%= @booking.boat.user.full_name %></h3>
             <p><%= @booking.boat.user.bio %></p>
           </div>
         </div>
       </div>
-
-      <hr>
 
       <div class="dates-and-price">
         <div class="row">

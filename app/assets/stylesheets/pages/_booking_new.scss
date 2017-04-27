@@ -1,15 +1,25 @@
 .booking-main-row {
   background-color: $platinum;
-  border-radius: 20px;
+  border-radius: 5px;
+  padding: 0px;
 }
 
 .booking-container {
-  hr {border-width: 3px;}
-  h2, h3 {font-family: $base-font;}
+  hr {border: 1px solid $platinum}
+  h2, h3 {font-family: $base-font;
+  text-align: left;
+  margin-top: 0px;}
   padding: 10px;
-  h1 {}
+  h1 {font-family: $base-font;
+    padding-bottom: 10px;}
 }
-
+.booking-container h3 {
+  color: $payne-grey;
+}
+#host-header, #boat-header {
+  color: $payne-grey;
+  font-weight: bold;
+}
 .boat-info, .owner-info {
   .boat-description {}
 }
@@ -17,12 +27,28 @@
 .boat-description, .owner-description {
   li {
     list-style-type: none;
-
   }
+  padding: 5px;
 }
 
+.booking-container p {
+  font-weight: lighter;
+}
+.owner-info, .boat-info {
+  color: white;
+  background-color: $pastel-blue;
+  padding: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.booking-header {
+  color: white;
+  background-color: $sea-serpent;
+  padding-top: 1px;
+  border-radius: 4px;
+}
 .btn-book {
-  background-color: $sunset-orange;
+  background-color: $sea-serpent;
   padding: 6px 10px;
   border-radius: 4px;
   color: white;
@@ -38,8 +64,5 @@
     flex-wrap: wrap;
     align-items: center;
 }
-// .row.is-flex > [class*='col-'] {
-//     display: flex;
-//     flex-direction: column;
-// }
+
 
