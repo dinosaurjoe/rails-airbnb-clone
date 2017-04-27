@@ -1,27 +1,61 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-3 col-md-4 hide-sm">
-      <%= image_tag (@user.profile_img) %>
-      <h4><%= @user.full_name %></h4>
+  <div class="wrapper-profile">
+  <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+      <div class="card hovercard">
+          <div class="card-background">
+              <%= image_tag "ocean.jpg" %>
+          </div>
+          <div class="useravatar">
+            <% if @user.profile_img %>
+            <%= cl_image_tag @user.profile_img %>
+            <% else %>
+            <%= image_tag "default-user.png" %>
+            <% end %>
+          </div>
+          <div class="card-info"> <span class="card-title"><%= @user.first_name %></span>
 
-    </div>
-
-    <div class="col-lg-9 col-md-8 col-sm-12">
-      <div class="user-bio">
-        <h2><%= @user.full_name %></h2>
-        <p><%= @user.bio %></p>
+          </div>
       </div>
-      <div class="user-listings">
-        <h3>My Boats</h3>
-      <div class="row">
-        <% @user.boats.each do |boat| %>
-          <div class="col-lg-3">
-            <%= image_tag (boat.photo) %>
-            <p><%= boat.name %></p>
-            </div>
-          <% end %>
+      <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+              <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicons-list" aria-hidden="true"></span>
+                  <div class="hidden-xs">About Me</div>
+              </button>
+          </div>
+          <div class="btn-group" role="group">
+              <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicons-boat" aria-hidden="true"></span>
+                  <div class="hidden-xs">My Boats</div>
+              </button>
+          </div>
+          <div class="btn-group" role="group">
+              <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicons-star" aria-hidden="true"></span>
+                  <div class="hidden-xs">Reviews</div>
+              </button>
+          </div>
+      </div>
+
+          <div class="well">
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="tab1">
+            <p><%= @user.bio %></p>
+          </div>
+          <div class="tab-pane fade in" id="tab2">
+            <% @user.boats.each do |boat| %>
+            <li>
+              <ul><%= boat.name %>
+                <%= boat.category %>
+                <%= boat.photo %>
+              </ul>
+            </li>
+            <% end %>
+          </div>
+          <div class="tab-pane fade in" id="tab3">
+            <p> My Reviews </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
