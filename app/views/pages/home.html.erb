@@ -5,8 +5,13 @@
     <div class="search-bar">
       <div class="form-inline">
         <%= simple_form_for @boat, url: boats_path, method: :get do |f| %>
-          <%= f.input :address, required: false, placeholder: "address", label:false %>
-          <%= f.input :category, priority: [ "Shrimp Boat" ], collection: ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"], required: false, prompt: 'category', label:false  %>
+          <%= f.input :address, required: false %>
+          <%= f.input :category, priority: [ "Shrimp Boat" ], collection: ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"], required: false  %>
+          <%= f.simple_fields_for @booking do |booking_form| %>
+          <%= booking_form.input :check_in, input_html: { id: "datepicker" }%>
+
+          <%= booking_form.input :check_out, input_html: { id: "datepicker" }%>
+          <% end %>
           <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
         <% end %>
        </div>

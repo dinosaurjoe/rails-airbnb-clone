@@ -22,7 +22,13 @@ class BoatsController < ApplicationController
 
   def index
     @boats = Boat.near(boat_params[:address], 20).where({ category: boat_params[:category] })
-
+    booked = []
+    @boats.each do |boat|
+      if Booking.where("boat_id = ?", boat.id).where("check_out > ? AND check_in < ?", params[:check_in], params[:check_out]).exists?
+        booked << boat
+      end
+    end
+    @boats -= booked
     @hash = Gmaps4rails.build_markers(@boats) do |boat, marker|
       marker.lat boat.latitude
       marker.lng boat.longitude
