@@ -1,13 +1,27 @@
+// body {
+//   display: flex;
+//   min-height: 100vh;
+//   flex-direction: column;
+// }
+
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  margin:0;
+  padding:0;
+  height:100%;
 }
 
-.all-content {
-  flex: 1;
+.container {
+  min-height:100%;
 }
+
+
+// .all-content {
+//   flex: 1;
+// }
 #footer-black {
+  bottom:-95px;
+  width:100%;
+  height:95px;
   background-color: $payne-grey;
   padding: 30px 0;
 }
