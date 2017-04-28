@@ -7,7 +7,6 @@
         <li role="presentation" class="active"><a href="#dashboard" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
         <li role="presentation"><a href="#my-listings" aria-controls="profile" role="tab" data-toggle="tab">My Boats</a></li>
         <li role="presentation"><a href="#my-voyages" aria-controls="messages" role="tab" data-toggle="tab">My Voyages</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="settings" role="tab" data-toggle="tab">Profile</a></li>
         <li role="presentation"><a href="#requests" aria-controls="settings" role="tab" data-toggle="tab">Requests</a></li>
       </ul>
     </div>
@@ -19,21 +18,14 @@
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE! -->
     <div role="tabpanel" class="tab-pane active" id="dashboard">
       <div class="space-top">
-        <div class="container">
+        <div class="container-700">
           <div class="row">
             <div class="dash-body col-md-3 col-xs-3">
               <div class="panel">
-                <div class="panel-image profile-photo">
+                <div class="panel-image">
                   <!-- ADD PICTURE HERE -->
 
-                  <%= cl_image_tag @user.profile_img, height: 300, width: 400, crop: :fill %>
-                  <!-- ADD PICTURE HERE -->
-                  <div class="upload-profile-pic btn btn-contrast btn-block text-wrap">
-                    <!-- ADD PHOTO HERE! link to shit -->
-                    <i class="fa fa-camera icon" aria-hidden="true"></i>
-                    Add a Photo
-                  </div>
-                  <!-- ADD PICTURE HERE -->
+                  <%= cl_image_tag @user.profile_img, width: 150, crop: :fit %>
                 </div>
                 <div class="panel-body">
                   <h2 class="text-center"><%= @user.full_name %></h2>
@@ -59,7 +51,7 @@
                   Notification
                 </div>
                 <div class="panel-body">
-                  <p>Maybe can be a list of notifications</p>
+                  <p>There are three boats you may be interested in!</p>
                 </div>
               </div>
               <div class="panel">
@@ -67,7 +59,9 @@
                   Messages
                 </div>
                 <div class="panel-body">
-                  <p>You can see your notifications here</p>
+                  <p>--You call that a boat?</p>
+                  <p>--Did you sink my boat?</p>
+                  <p>--Does the boat work as well in milk as it does in water?</p>
                 </div>
               </div>
             </div>
@@ -85,7 +79,6 @@
             <div class="dash-body col-md-2">
               <ul class="sidenav-list">
                 <li><%= link_to "Your Listings", user_path(@user), class: "sidenav-item" %></li>
-                <h2>Your Listings</h2>
                 <div class="space-top">
                   <%= link_to "Add New Listing", new_boat_path(@user), class: "btn btn-addlist" %>
                 </div>
@@ -168,17 +161,6 @@
       </div>
     </div>
 
-
-<!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
-    <div role="tabpanel" class="tab-pane" id="profile">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>My beautiful Profile</h1>
-          </div>
-        </div>
-      </div>
-    </div>
 
 <!-- EVERYTHING SHOULD BE EDITED IN HERE FOR EACH TAB. ALL HTML CODE GOES IN HERE!-->
     <div role="tabpanel" class="tab-pane" id="requests">

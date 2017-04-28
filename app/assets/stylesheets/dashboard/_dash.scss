@@ -1,3 +1,10 @@
+@media (max-width: 700px) {
+  .container-700 {
+    width: 700px;
+  }
+}
+
+
 .dash-body {
   padding: 0 12.5px;
   p {
@@ -34,6 +41,9 @@
 }
 .panel-image {
   position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
 }
 .btn.btn-contrast.btn-block {
   position: absolute;
@@ -58,7 +68,7 @@
   color: white;
 }
 .btn-addlist {
-  background-color: pink;
+  background-color: $sunset-orange;
   color: white;
 }
 .btn-addlist:hover {
@@ -76,4 +86,10 @@
 }
 .pos-abs {
   position: absolute;
+}
+.profile_img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 120px;
 }
