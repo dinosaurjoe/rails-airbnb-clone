@@ -3,7 +3,6 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @owner = @boat.user
-    @booking = Booking.new
   end
 
   def new
