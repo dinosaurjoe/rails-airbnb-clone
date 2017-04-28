@@ -6,13 +6,25 @@
 .boat-table {
   background-color: $platinum;
   color: $payne-grey;
-  padding: 20px;
   line-height: 35px;
+  padding: 0;
+  border-radius: 4px;
+
 }
 
-.boat-header {
+.boat-table h4 {
+  font-family: $base-font;
+  font-size: 18px;
+  font-weight: lighter;
+  letter-spacing: 0.4px;
+}
+
+.table-header {
   background-color: $sea-serpent;
   color: white;
+  padding: 4px 8px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .btn-book {
@@ -29,15 +41,6 @@
 
 }
 
-
-.test-table {
-  background-color: $platinum;
-  width: 300px;
-  height: 230px;
-  line-height: 40px;
-}
-
-
-.test-table tr {
-  height: 10px;
+.table-content {
+  padding-left: 10px;
 }
