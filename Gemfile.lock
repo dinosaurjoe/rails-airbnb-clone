@@ -252,7 +252,7 @@ DEPENDENCIES
   geocoder
   gmaps4rails
   jbuilder (~> 2.0)
-  jquery-rails
+  jquery-rails (>= 2.3.0)
   listen (~> 3.0.5)
   omniauth-facebook
   pg
