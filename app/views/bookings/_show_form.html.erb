@@ -1,12 +1,11 @@
-
-<%= simple_form_for [@boat, @booking], url: boat_bookings_path(@boat), method: :post do |f| %>
+<%= simple_form_for [@boat, @booking], url: boat_bookings_path(@boat), method: :get do |f| %>
 <div class="form-date-picker">
   <div class="input-daterange input-group" id="datepicker">
     <%= f.input :check_in, as: :string, input_html: { class: "input-sm form-control", id: "check_in"}%>
     <span class="input-group-addon">to</span>
     <%= f.input :check_out, as: :string, input_html: { class: "input-sm form-control", id: "check_out"}%>
   </div>
-  <h3 id="price" >Price: </h3>
+  <p id="price" >Price: </p>
   <%= f.button :submit, 'Request to Book',  class: "btn btn-primary"  %>
 <% end %>
 

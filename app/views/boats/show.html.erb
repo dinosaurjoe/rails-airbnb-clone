@@ -20,15 +20,8 @@
     </div>
 
     <div class="col-sm-12 col-md-3 col-md-offset-1 boat-table text-center">
-      <div class="table-header">
-        <h4>PRICE PER DAY: $<%= @boat.price %></h4>
-      </div>
-      <div class="table-content">
-        <div class="table-light"><p><strong>check in</strong> 12/05/17</p></div>
-        <div class="table-dark"><p><strong>check out</strong> 20/05/17</p></div>
-        <div class="table-light"><p><strong>TOTAL</strong> $<%= @boat.price * 8 %></p></div>
-        <p><%= link_to 'book now', new_boat_booking_path(@boat), class: 'btn btn-book' %></p>
-      </div>
+      <%= render 'booking_form' %>
+
     </div>
   </div>
 </div>
