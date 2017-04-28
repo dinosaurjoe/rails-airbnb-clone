@@ -21,10 +21,11 @@
       <div class="space-top">
         <div class="container">
           <div class="row">
-            <div class="dash-body col-md-3">
+            <div class="dash-body col-md-3 col-xs-3">
               <div class="panel">
                 <div class="panel-image profile-photo">
                   <!-- ADD PICTURE HERE -->
+
                   <%= cl_image_tag @user.profile_img, height: 300, width: 400, crop: :fill %>
                   <!-- ADD PICTURE HERE -->
                   <div class="upload-profile-pic btn btn-contrast btn-block text-wrap">
@@ -32,6 +33,7 @@
                     <i class="fa fa-camera icon" aria-hidden="true"></i>
                     Add a Photo
                   </div>
+                  <!-- ADD PICTURE HERE -->
                 </div>
                 <div class="panel-body">
                   <h2 class="text-center"><%= @user.full_name %></h2>
@@ -51,7 +53,7 @@
               </div>
             </div>
 
-            <div class="dash-aside col-md-9">
+            <div class="dash-aside col-md-9 col-xs-9">
               <div class="panel">
                 <div class="panel-header" id="notification">
                   Notification
@@ -92,9 +94,11 @@
             <div class="dash-aside col-md-10">
 
               <% if !@user.boats %>
+
                 <div class="space-1 h3">
                   Ah, it seems you have no Boats listed yet.GET BACK HERE AND ADD A BOAT YOU SCRUB!
                 </div>
+
               <% end %>
 
                 <% @boats.each do |boat| %>
