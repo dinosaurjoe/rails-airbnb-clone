@@ -18,7 +18,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to "become a boat", new_boat_path %>
     <% if user_signed_in? %>
-      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <% avatar_url = current_user.profile_img || "http://placehold.it/30x30" %>
       <div class="dropdown">
         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
