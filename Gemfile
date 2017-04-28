@@ -12,7 +12,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 
 gem 'sass-rails'
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 2.3.0'
 gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
