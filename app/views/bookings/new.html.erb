@@ -45,6 +45,9 @@
           <div class="text-center booking-form">
             <%= render 'form' %>
           </div>
+          <div class="text-center booking-total-price">
+            <h3><strong>total:</strong> $<%= (7 * @booking.boat.price) %></h3>
+          </div>
         </div>
       </div>
 
