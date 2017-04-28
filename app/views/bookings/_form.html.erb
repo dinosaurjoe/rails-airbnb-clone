@@ -1,35 +1,10 @@
+<div class="form-inline">
 
-<%= simple_form_for [@boat, @booking], url: boat_bookings_path(@boat), method: :post do |f| %>
-<div class="form-date-picker">
-  <div class="input-daterange input-group" id="datepicker">
-    <%= f.input :check_in, as: :string, input_html: { class: "input-sm form-control", id: "check_in"}%>
-    <span class="input-group-addon">to</span>
-    <%= f.input :check_out, as: :string, input_html: { class: "input-sm form-control", id: "check_out"}%>
-  </div>
-  <h3 id="price" >Price: </h3>
-  <%= f.button :submit, 'Request to Book',  class: "btn btn-primary"  %>
-<% end %>
+  <%= simple_form_for [@boat, @booking] do |f| %>
+    <%= f.input :check_in, input_html: { class: "datepicker" }%>
 
+    <%= f.input :check_out, input_html: { class: "datepicker" }%>
 
-<% content_for(:after_js) do %>
-  <script>
-  $(document).ready(function() {
-    var check_in = new Date($('#check_in').val());
-    var check_out = new Date($('#check_out').val());
-    var price_day = <%= @boat.price %>
-    $('#price').text( 'Price:' + (((check_out - check_in) / 1000 / 360 / 24 ) * price_day));
-
-    $('.input-daterange').datepicker();
-
-
-    $('.input-sm').change(function() {
-      var check_in = new Date($('#check_in').val());
-      var check_out = new Date($('#check_out').val());
-      var price_day = <%= @boat.price %>
-      $('#price').text( 'Price:' + (((check_out - check_in) / 1000 / 60 / 24 ) * price_day));
-    });
-
-
-  });
-  </script>
-<% end %>
+    <%= f.button :submit, "Create", class: "btn-book"%>
+  <% end %>
+</div>
