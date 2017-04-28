@@ -8,21 +8,21 @@
         <%= simple_form_for @boat, url: boats_path, method: :get do |f| %>
         <div class="form-date-picker">
           <%= f.simple_fields_for @booking do |booking_form| %>
-          <div class="input-daterange form-group input-group" id="datepicker">
-          <%= booking_form.input :check_in, as: :string, input_html: { class: "input-sm form-control" }%>
-          <span class="input-group-addon">to</span>
-          <%= booking_form.input :check_out, as: :string, input_html: { class: "input-sm form-control" }%>
+          <div class="input-daterange input-group" id="datepicker">
+            <%= booking_form.input :check_in, as: :string, input_html: { class: "input-sm form-control" }%>
+            <span class="input-group-addon">to</span>
+            <%= booking_form.input :check_out, as: :string, input_html: { class: "input-sm form-control" }%>
           <% end %>
           </div>
           <%= f.input :address, required: false, placeholder: "where?", label:false %>
           <%= f.input :category, priority: [ "Shrimp Boat" ], collection: ["Fishing Boat", "Sail Boat", "Canoe", "Speed Boat", "Yacht", "Houseboat", "Banana Boat", "Kayak", "Life Boat", "Pirate Ship", "Shrimp Boat", "Tug Boat"], required: false, prompt: 'category', label:false  %>
           <%= f.button :submit, 'search',  class: "btn btn-primary"  %>
-        <% end %>
-       </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
   $(document).ready(function(){
