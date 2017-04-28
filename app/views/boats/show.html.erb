@@ -1,6 +1,5 @@
 <div class="boat-container">
-  <% image_path = @boat.photo %>
-  <div class="boat-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= asset_path 'sailboat.jpg' %>);">
+  <div class="boat-banner boat-background" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.45) 0%, rgba(0,36,61,0.45) 50%), url( <%= @boat.photo %>);">
     <div class="banner-content">
       <h3><%= @boat.name %></h3>
       <p><%= @boat.city %></p>
