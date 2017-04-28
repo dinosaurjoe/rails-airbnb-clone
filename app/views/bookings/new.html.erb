@@ -2,14 +2,14 @@
   <div class="row">
     <div class="booking-main-row col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
       <div class="booking-header">
-        <h1 class="text-center">Create Booking Request</h1>
+        <h1 class="text-center">create booking request</h1>
 
       </div>
 
 
 
       <div class="boat-info">
-        <h2 id="boat-header">The Boat:</h2>
+        <h2 id="boat-header">the boat</h2>
         <div class="row is-flex">
           <div class="boat-image text-center col-xs-8-offset-5 col-md-6 col-lg-6">
             <%= image_tag @booking.boat.photo %>
@@ -27,7 +27,7 @@
       </div>
 
       <div class="owner-info">
-        <h2 id="host-header">Your Host:</h2>
+        <h2 id="host-header">the host</h2>
         <div class="row is-flex">
           <div class="owner-image text-center col-xs-12 col-md-6 col-lg-6">
             <%= cl_image_tag @booking.boat.user.profile_img %>
@@ -42,7 +42,7 @@
 
       <div class="dates-and-price">
         <div class="row">
-          <div class="text-center col-xs-12 col-md-6 col-lg-6">
+          <div class="text-center booking-form">
             <%= render 'form' %>
           </div>
         </div>

@@ -44,11 +44,34 @@ border: none;
 }
 
 .form-date-picker {
-  padding-bottom: 10px;
+  padding: 10px 0;
 }
 
 .form-date-picker label {
   padding-bottom: 4px;
 }
 
+#boat_booking_check_in {
+  border-radius: 4px;
+  color: $payne-grey;
+  text-align: left;
+  margin-right: 2px;
+  margin-bottom: 10px;
 
+}
+
+#boat_booking_check_out {
+  border-radius: 4px;
+  color: $payne-grey;
+  text-align: left;
+  margin-left: 2px;
+  margin-bottom: 10px;
+}
+
+#boat-category {
+  margin-left: 5px;
+}
+
+.form-line-two {
+  padding-left: 14px;
+}

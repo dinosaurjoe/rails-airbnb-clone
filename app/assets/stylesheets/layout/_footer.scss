@@ -1,23 +1,11 @@
-// body {
-//   display: flex;
-//   min-height: 100vh;
-//   flex-direction: column;
-// }
-
 body {
   margin:0;
   padding:0;
   height:100%;
 }
-
-.container {
+.footer-container {
   min-height:100%;
 }
-
-
-// .all-content {
-//   flex: 1;
-// }
 #footer-black {
   bottom:-70px;
   width:100%;
@@ -26,10 +14,6 @@ body {
   padding: 20px 0;
   vertical-align: center;
 }
-
-
-
-
 #footer-black a {
   font-size: 25px;
   padding: 0 15px;
@@ -50,8 +34,3 @@ body {
 #footer-black a:hover {
   opacity: 0.8;
 }
-
-
-
-
-

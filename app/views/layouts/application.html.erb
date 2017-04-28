@@ -14,7 +14,9 @@
      <!--  <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p> -->
       <%= render 'shared/navbar' %>
+      <div style = "min-height: 660px">
       <%= yield %>
+      </div>
       <%= render 'shared/footer' %>
 
       <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
