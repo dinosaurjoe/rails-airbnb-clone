@@ -57,7 +57,9 @@
 }
 
 .boat-image img, .owner-image img {
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
 }
 .row.is-flex {
     display: flex;
