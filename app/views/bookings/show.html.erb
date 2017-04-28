@@ -21,10 +21,8 @@
     </ul>
   </div>
   <div class="dates-and-price">
-    <ul>
-      <li>Check in: <%= @booking.check_in %></li>
-      <li>Check out: <%= @booking.check_out %></li>
-      <li>Price <%= (@booking.check_out - @booking.check_in) * @booking.boat.price %></li>
-    </ul>
+    <%= render 'form' %>
+    <!-- use js to dynamically calculate price based on chosen dates -->
+    <h3>Price: <%= (@booking.check_out - @booking.check_in * @booking.price) %></h3>
   </div>
 </div>
