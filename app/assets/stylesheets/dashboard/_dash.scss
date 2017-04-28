@@ -6,7 +6,7 @@
 }
 .panel {
   border: 1px solid #dce0e0;
-  background-color: #fff;
+  background-color: $pastel-blue;
   margin-bottom: 24px;
 }
 .dash-aside {
@@ -17,8 +17,8 @@
   font-weight: bold;
 }
 .panel-header {
-  background-color: #edefed;
-  color: #484848;
+  background-color: $payne-grey;
+  color: white;
   font-size: 16px;
   padding-top: 12px;
   padding-bottom: 12px;
